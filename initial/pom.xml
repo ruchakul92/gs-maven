@@ -30,6 +30,68 @@
                     </execution>
                 </executions>
             </plugin>
+            
+        <plugin>
+	        <groupId>com.atlassian.maven.plugins</groupId>
+	        <artifactId>maven-clover2-plugin</artifactId>
+	        <version>3.1.12</version>
+			<configuration>
+				<encoding>utf-8</encoding>
+	   			<license><![CDATA[PpOnrjlpFewlfppRpEgUBpPbqOQJCUXjxddDPtIMwGJDGG
+mi2KYwlOOX3WDaavVOPbBQRA2Ktgp87Kv<XxIdM4P76DSK
+QMRrXSqOOqMmOmnNoNrtxoMpPOnooOnRRpvvWUWVTVwsOn
+mnmUUnpttrorsmmmmmUUnpttrorsmmmmmUU3vYXdbUUn
+]]>
+	</license>
+			    <targetPercentage>85%</targetPercentage>
+			    <jdk>1.7</jdk>
+			    <generatePdf>true</generatePdf>
+			    <generateXml>true</generateXml>
+			    <generateHtml>true</generateHtml>	
+			   <generateHistorical>true</generateHistorical> 
+			</configuration> 
+			<executions>
+			  <execution>
+			    <id>main</id>
+			    <phase>verify</phase>
+			    <goals>
+			      <goal>instrument</goal>
+			      <goal>aggregate</goal>
+			      <goal>clover</goal>
+			     </goals>
+			   </execution>
+			</executions>
+	   </plugin>
+      
+      
+      <plugin>
+	      <groupId>org.codehaus.mojo</groupId>
+	      <artifactId>sonar-maven-plugin</artifactId>
+	      <version>2.4</version>
+	   <configuration>  
+			<sonar.java.coveragePlugin>clover</sonar.java.coveragePlugin>
+			<sonar.language>java</sonar.language>
+                   <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+            <sonar.clover.reportPath>target/site/clover/clover.xml</sonar.clover.reportPath>        
+            <clover.version>3.0</clover.version> 
+       
+         <!-- <sonar.sources>bork</sonar.sources>
+            <sonar.exclusions>**/clover/src-instrumented/**</sonar.exclusions>  -->
+		
+		</configuration> 
+	      
+	      <executions>
+			  <execution>
+			    <phase>verify</phase>
+			    <goals>
+			      <goal>sonar</goal>
+			     </goals>
+			   </execution>
+			</executions>
+			
+	   </plugin>
+
+            
         </plugins>
     </build>
 </project>
