@@ -31,7 +31,7 @@
                 </executions>
             </plugin>
             
-        <plugin>
+       <plugin>
 	        <groupId>com.atlassian.maven.plugins</groupId>
 	        <artifactId>maven-clover2-plugin</artifactId>
 	        <version>3.1.12</version>
@@ -64,21 +64,21 @@ mnmUUnpttrorsmmmmmUUnpttrorsmmmmmUU3vYXdbUUn
 	   </plugin>
       
       
-      <plugin>
+   <!--   <plugin>
 	      <groupId>org.codehaus.mojo</groupId>
 	      <artifactId>sonar-maven-plugin</artifactId>
 	      <version>2.4</version>
-	   <configuration>  
-			<sonar.java.coveragePlugin>clover</sonar.java.coveragePlugin>
-			<sonar.language>java</sonar.language>
-                   <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-            <sonar.clover.reportPath>target/site/clover/clover.xml</sonar.clover.reportPath>        
-            <clover.version>3.0</clover.version> 
-       
+	   <configuration>  -->
+		<!--	<sonar.java.coveragePlugin>clover</sonar.java.coveragePlugin> -->
+		<!--	<sonar.language>java</sonar.language>
+                   <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis> 
+            <sonar.clover.reportPath>target/site/clover/clover.xml</sonar.clover.reportPath>     			
+            <clover.version>3.0</clover.version>  -->
+			
          <!-- <sonar.sources>bork</sonar.sources>
             <sonar.exclusions>**/clover/src-instrumented/**</sonar.exclusions>  -->
 		
-		</configuration> 
+	<!--	</configuration> 
 	      
 	      <executions>
 			  <execution>
@@ -89,7 +89,7 @@ mnmUUnpttrorsmmmmmUUnpttrorsmmmmmUU3vYXdbUUn
 			   </execution>
 			</executions>
 			
-	   </plugin>
+	   </plugin>  -->
 
             
         </plugins>
